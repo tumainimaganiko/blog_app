@@ -1,0 +1,20 @@
+current directory: /Users/tumainimaganiko/projects/blog_app/blog_app/''/gems/racc-1.7.1/ext/racc/cparse
+/Users/tumainimaganiko/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/tumainimaganiko/projects/blog_app/blog_app/''/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230815-37340-ibz0fq sitelibdir\=./.gem.20230815-37340-ibz0fq clean
+
+current directory: /Users/tumainimaganiko/projects/blog_app/blog_app/''/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230815-37340-ibz0fq sitelibdir\=./.gem.20230815-37340-ibz0fq
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/tumainimaganiko/projects/blog_app/blog_app/''/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230815-37340-ibz0fq sitelibdir\=./.gem.20230815-37340-ibz0fq install
+/opt/homebrew/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20230815-37340-ibz0fq/racc
+
+current directory: /Users/tumainimaganiko/projects/blog_app/blog_app/''/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230815-37340-ibz0fq sitelibdir\=./.gem.20230815-37340-ibz0fq clean
