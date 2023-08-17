@@ -8,6 +8,7 @@
 
 # 📗 Table of Contents
 
+- [Blog App](#blog-app)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Blog App ](#-blog-app-)
   - [🛠 Built With ](#-built-with-)
@@ -46,6 +47,7 @@ This backend blog app is a powerful and scalable platform for creating and manag
 ### Key Features <a name="key-features"></a>
 
 - Created a data model.
+-  Processing data in models.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,7 +101,6 @@ Clone this repository to your desired folder:
 ## 🔭 Future Features <a name="future-features"></a>
 
  -  Validations and Model specs.
- -  Processing data in models.
  -  Setup and controllers.
  -  Controllers specs.
  -  Views.
