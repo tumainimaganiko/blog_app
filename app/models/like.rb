@@ -3,7 +3,8 @@ class Like < ApplicationRecord
   belongs_to :post
 
   after_save :update_posts_like_counter
-
+  validates :author, :post, presence: true
+  
   private
 
   def update_posts_like_counter
