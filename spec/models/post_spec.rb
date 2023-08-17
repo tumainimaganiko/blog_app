@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  first_user = User.new(name: 'Tumaini', photo: 'https://images.unsplash.com/photo-1691610876953-8b20fee3352d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80', bio: 'Teacher from Mexico.')
+  first_user = User.new(name: 'Tumaini',
+                        photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 
   it 'title should not be empty' do
     first_post = Post.new(author: first_user, title: 'Hello', text: 'This is my first post')
