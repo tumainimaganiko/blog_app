@@ -48,6 +48,10 @@ This backend blog app is a powerful and scalable platform for creating and manag
 
 - Created a data model.
 -  Processing data in models.
+-  Validations and Model specs.
+-  Setup and controllers.
+-  Controllers specs.
+-  Views.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,11 +103,6 @@ Clone this repository to your desired folder:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
- -  Validations and Model specs.
- -  Setup and controllers.
- -  Controllers specs.
- -  Views.
  -  Forms.
  -  Integration specs for Views and fixing n+1 problems.
  -  Add Devise.
