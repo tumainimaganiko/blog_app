@@ -16,5 +16,19 @@ RSpec.describe 'Posts' do
     end
   end
 
+  describe 'GET /index' do
+    it 'response status was correct' do
+      get '/users/user_id/posts/index'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'GET /index' do
+    it 'response status was correct' do
+      get '/users/user_id/posts/show'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   
 end
