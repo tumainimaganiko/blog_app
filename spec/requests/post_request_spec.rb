@@ -30,5 +30,16 @@ RSpec.describe 'Posts' do
     end
   end
 
-  
+  describe 'users' do
+    it 'renders the index template' do
+      get '/users/user_id/posts'
+
+      expect(response).to render_template('index')
+    end
+    it 'renders the show template' do
+      get '/users/user_id/posts/posts_id'
+
+      expect(response).to render_template('show')
+    end
+  end
 end
