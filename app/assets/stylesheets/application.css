@@ -2,8 +2,8 @@ body {
    background-color: bisque;
 }
 .container {
-    display: flex;
-    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
  }
 
  .container img {
@@ -21,11 +21,13 @@ body {
 
  .container ul li > div {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 100px auto;
  }
 
  .container ul li > div div {
-    margin: 0 30px;    
+    margin: 0 30px; 
+    border: 1px solid black;
+    padding: 0 10px;   
  }
 
  .container ul li > div div p:first-child a {
@@ -40,26 +42,65 @@ body {
 
  .main-div {
    margin: 0 auto;
-   width: 50%;
+   width: 80%;
  }
 
 .show-container {
-   /* width: 50%; */
    display: grid;
-   grid-template-columns: auto auto;
-   grid-template-rows: 400px;
+   grid-template-columns: 100px auto;
 }
 
 .show-container img {
-   width: 100%;
-   height: 100%;
+   width: 100px;
 }
 
 .show-container div {
-   margin: 20px;
+   margin-left:  20px;
+   border: 1px solid black;
+   padding: 0 10px;
 }
 
 .show-container div p:first-child {
    font-weight: bolder;
    font-size: 24px;
 }
+
+.show-container div p:last-child {
+   text-align: right;
+}
+
+.main-div > div:nth-child(2) {
+   border: 1px solid black;
+   margin: 20px 0;
+   padding: 10px;
+}
+
+.main-div ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0 10px;
+   border: 1px solid black;
+}
+
+.main-div ul li p:first-child {
+   font-weight: bold;
+}
+
+.main-div ul li p:last-child {
+   text-align: right;
+}
+
+.main-div button {
+   margin: 20px auto;
+   display: block;
+   padding: 5px;
+}
+
+.main-div button a {
+   text-decoration: none;
+}
+.post-div {
+   margin: 0 auto;
+   width: 50%;
+}
+
