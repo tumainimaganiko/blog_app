@@ -99,8 +99,43 @@ body {
 .main-div button a {
    text-decoration: none;
 }
+
 .post-div {
    margin: 0 auto;
-   width: 50%;
+   width: 80%;
 }
 
+.post-div ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+.post-div ul li {
+   border: 1px solid black;
+   margin: 10px 0;
+   padding: 10px;
+}
+
+.post-div ul li p:last-child {
+   text-align: right;
+}
+
+.post-div ul div {
+   border: 1px solid black;
+   padding: 10px;
+}
+
+.post-div button {
+   display: block;
+   margin: 10px auto;
+   padding: 10px;
+}
+
+.post-div button a {
+   text-decoration: none;
+}
+
+.div {
+   border: 1px solid black;
+}
