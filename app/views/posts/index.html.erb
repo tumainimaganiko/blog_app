@@ -25,6 +25,14 @@
                <p>User : <%= post.author.name %></p>
                <p><%= post.text %></p>
              <% end %>
+             <div class='comment-div'>
+                <P>
+                <%= link_to 'Add a comment' , "/users/#{@posts.id}/posts/#{post.id}/comments/new" %>
+                </P>
+                <P>
+                  <%= link_to 'Like' , "/users/#{@posts.id}/posts/#{post.id}/likes/" %>
+                </P>
+             </div>
           </div>
         <% end %>
     </ul>
