@@ -30,6 +30,11 @@ RSpec.feature "User Index Page", type: :feature do
       expect(page).to have_content('Marco Diaz')
   end
 
-  
+  scenario "I can see the profile picture for each user" do
+    visit users_path
+      expect(page).to have_css("img[src*='#{@first_user.photo}']")
+      expect(page).to have_css("img[src*='#{@second_user.photo}']")
+  end
 
+  
 end
