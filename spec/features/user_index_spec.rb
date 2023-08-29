@@ -36,5 +36,12 @@ RSpec.feature "User Index Page", type: :feature do
       expect(page).to have_css("img[src*='#{@second_user.photo}']")
   end
 
+  scenario "I can see the number of posts each user has written" do
+    visit users_path
+      expect(page).to have_content("Number of posts: 4")
+      expect(page).to have_content("Number of posts: 3")
+  end
+
   
+
 end
