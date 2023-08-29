@@ -24,5 +24,12 @@ RSpec.feature "User Index Page", type: :feature do
         @third_post = Post.create(author: @second_user, title: 'Post, three', text: 'This is my third post')
     end
 
+  scenario "I can see the username of all other users" do
+    visit users_path
+      expect(page).to have_content('Tumaini Maganiko')
+      expect(page).to have_content('Marco Diaz')
+  end
+
   
+
 end
