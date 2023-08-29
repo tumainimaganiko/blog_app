@@ -42,6 +42,11 @@ RSpec.feature "User Index Page", type: :feature do
       expect(page).to have_content("Number of posts: 3")
   end
 
-  
+  scenario "When I click on a user, I am redirected to that user's show page" do
+    visit users_path  
+    click_link @first_user.name
+
+    expect(current_path).to eq(user_path(@first_user))
+  end
 
 end
