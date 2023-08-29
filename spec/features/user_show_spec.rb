@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User Index Page", type: :feature do
+RSpec.feature "User Show page", type: :feature do
     before(:each) do
         @user = User.create(
           name: 'Tumaini Maganiko',
@@ -16,7 +16,7 @@ RSpec.feature "User Index Page", type: :feature do
 
   describe "User's show page" do
     before(:each) do
-        visit users_path(@user)
+        visit user_path(@user)
     end
 
     it "should show the user's profile picture" do
@@ -31,6 +31,9 @@ RSpec.feature "User Index Page", type: :feature do
       expect(page).to have_content("Number of posts: 4")
     end
 
+    it "I can see the user's bio" do
+      expect(page).to have_content("I am a great programmer")
+    end
+
   end
-  
 end
