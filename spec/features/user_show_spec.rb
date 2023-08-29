@@ -22,6 +22,10 @@ RSpec.feature "User Index Page", type: :feature do
     it "should show the user's profile picture" do
       expect(page).to have_css("img[src*='#{@user.photo}']")
     end
+
+    it "I can see the user's username" do
+        expect(page).to have_content('Tumaini Maganiko')
+    end
   end
   
 end
