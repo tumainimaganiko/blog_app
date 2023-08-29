@@ -44,4 +44,8 @@ RSpec.feature "User Show page", type: :feature do
         end
     end
 
+    scenario "I can see a button that lets me view all of a user's posts" do
+        expect(page).to have_button('See all posts')
+    end
+
 end
