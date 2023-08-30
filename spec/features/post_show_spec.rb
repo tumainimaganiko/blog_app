@@ -30,3 +30,8 @@ RSpec.feature 'Post show page', type: :feature do
     visit user_post_path(@user, @first_post)
     expect(page).to have_content('Likes: 0')
   end
+
+  scenario 'I can see the post body' do
+    visit user_post_path(@user, @first_post)
+    expect(page).to have_content(@first_post.text)
+  end
