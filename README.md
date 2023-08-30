@@ -53,6 +53,7 @@ This backend blog app is a powerful and scalable platform for creating and manag
 -  Setup and controllers.
 -  Controllers specs.
 -  Views.
+ -  Integration specs for Views and fixing n+1 problems.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,7 +105,6 @@ Clone this repository to your desired folder:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
- -  Integration specs for Views and fixing n+1 problems.
  -  Add Devise.
  -  Add authorization rules.
  -  Add API endpoints.
