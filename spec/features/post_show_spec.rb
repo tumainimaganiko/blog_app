@@ -42,4 +42,9 @@ RSpec.feature 'Post show page', type: :feature do
     expect(page).to have_content(@comment2.author.name)
   end
 
-  
+  scenario 'I can see the comment each commentor left' do
+    visit user_post_path(@user, @first_post)
+    expect(page).to have_content(@comment1.text)
+    expect(page).to have_content(@comment2.text)
+  end
+end
