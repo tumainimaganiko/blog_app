@@ -50,5 +50,9 @@ RSpec.feature "User Show page", type: :feature do
         expect(page).to have_content(@last_post.text)
       end
 
-      
+      scenario "I can see the first comments on a post." do
+        expect(page).to have_content(@comment1.text)
+        expect(page).to have_content(@comment2.text)
+        expect(page).to have_content(@comment3.text)
+      end
 end
