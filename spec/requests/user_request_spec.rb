@@ -1,45 +1,22 @@
 require 'rails_helper'
 
-RSpec.describe 'users' do
-  describe 'users/index', type: :view do
-    it 'response body includes correct placeholder text' do
-      render template: 'users/index'
-
-      expect(rendered).to have_selector('h1', text: 'Here is a index page for a given user')
-    end
-  end
-  describe 'users/show', type: :view do
-    it 'response body includes correct placeholder text' do
-      render template: 'users/show'
-
-      expect(rendered).to have_selector('h1', text: 'Here is a list of posts for a given user')
-    end
-  end
-
+RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    it 'response status was correct' do
-      get '/users/index'
+    it 'returns a success response' do
+      get users_path
       expect(response).to have_http_status(:success)
+      expect(response.body).to include('This is a list of users')
+      expect(response).to render_template(:index)
     end
   end
 
-  describe 'GET /index' do
-    it 'response status was correct' do
-      get '/users/show'
+  describe 'GET /show' do
+    it 'returns a success response' do
+      user = User.create!(name: 'Name', photo: 'https://image.com/image.jpg', posts_counter: 0)
+      get user_path(user)
       expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'users' do
-    it 'renders the index template' do
-      get '/users'
-
-      expect(response).to render_template('index')
-    end
-    it 'renders the index template' do
-      get '/users/user_id'
-
-      expect(response).to render_template('show')
+      expect(response.body).to include('Here is detail of a specific user')
+      expect(response).to render_template(:show)
     end
   end
 end
