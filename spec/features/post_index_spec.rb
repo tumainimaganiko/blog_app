@@ -35,4 +35,43 @@ RSpec.feature 'User Show page', type: :feature do
   scenario "I can see the user's username" do
     expect(page).to have_content(@user.name)
   end
+    scenario "I can see the user's username" do
+        expect(page).to have_content(@user.name)
+    end
+
+    scenario "I can see the number of posts the user has written" do
+        expect(page).to have_content("Number of posts: 4")
+      end
+
+      scenario "I can see a post's title" do
+        expect(page).to have_content(@first_post.title)
+        expect(page).to have_content(@second_post.title)
+        expect(page).to have_content(@third_post.title)
+        expect(page).to have_content(@last_post.title)
+      end
+
+      scenario "I can see some of the post's body" do
+        expect(page).to have_content(@first_post.text)
+        expect(page).to have_content(@second_post.text)
+        expect(page).to have_content(@third_post.text)
+        expect(page).to have_content(@last_post.text)
+      end
+
+      scenario "I can see the first comments on a post." do
+        expect(page).to have_content(@comment1.text)
+        expect(page).to have_content(@comment2.text)
+        expect(page).to have_content(@comment3.text)
+      end
+
+      scenario "I can see how many comments a post has" do
+        expect(page).to have_content("comments: 5")
+    end
+
+    scenario "I can see how many likes a post has" do
+        expect(page).to have_content("Likes: 0")
+    end
+
+    scenario "I can see a section for pagination if there are more posts than fit on the view" do
+        expect(page).to have_content("Pagination")
+    end
 end
