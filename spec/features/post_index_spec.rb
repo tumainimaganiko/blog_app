@@ -42,4 +42,13 @@ RSpec.feature "User Show page", type: :feature do
         expect(page).to have_content(@third_post.title)
         expect(page).to have_content(@last_post.title)
       end
+
+      scenario "I can see some of the post's body" do
+        expect(page).to have_content(@first_post.text)
+        expect(page).to have_content(@second_post.text)
+        expect(page).to have_content(@third_post.text)
+        expect(page).to have_content(@last_post.text)
+      end
+
+      
 end
