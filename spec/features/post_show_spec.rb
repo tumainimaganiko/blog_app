@@ -25,3 +25,8 @@ RSpec.feature 'Post show page', type: :feature do
   scenario 'I can see how many comments it has' do
     expect(page).to have_content('comments: 2')
   end
+
+  scenario 'I can see how many likes it has' do
+    visit user_post_path(@user, @first_post)
+    expect(page).to have_content('Likes: 0')
+  end
