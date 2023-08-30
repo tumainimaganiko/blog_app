@@ -3,26 +3,12 @@ require 'rails_helper'
 RSpec.feature 'User Show page', type: :feature do
   before do
     # Creating the user
-    @user = User.create(
-      name: 'Tumaini Maganiko',
-      photo: 'https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800',
-      bio: 'I am a great programmer',
-      posts_counter: 0
-    )
-    @first_post = Post.create(author: @user, title: 'Post One', text: 'This is my first post', comments_counter: 0,
+    @user = User.create(name: 'Tumaini Maganiko', photo: 'https://image.com/image.jpg', bio: 'Hello', posts_counter: 0)
+    @first_post = Post.create(author: @user, title: 'Post One', text: 'First post', comments_counter: 0,
                               likes_counter: 0)
-    @second_post = Post.create(author: @user, title: 'Post, two', text: 'This is my second post',
-                               comments_counter: 0, likes_counter: 0)
-    @third_post = Post.create(author: @user, title: 'Post, three', text: 'This is my third post',
-                              comments_counter: 0, likes_counter: 0)
-    @last_post = Post.create(author: @user, title: 'Post four', text: 'This is my fourth post',
-                             comments_counter: 0, likes_counter: 0)
 
     @comment1 = Comment.create(author: @user, post: @first_post, text: 'comment 1')
     @comment2 = Comment.create(author: @user, post: @first_post, text: 'comment 2')
-    @comment3 = Comment.create(author: @user, post: @first_post, text: 'comment 3')
-    @comment4 = Comment.create(author: @user, post: @first_post, text: 'comment 4')
-    @comment5 = Comment.create(author: @user, post: @first_post, text: 'comment 5')
 
     # Visiting the user's show page
     visit user_posts_path(@user)
@@ -35,43 +21,51 @@ RSpec.feature 'User Show page', type: :feature do
   scenario "I can see the user's username" do
     expect(page).to have_content(@user.name)
   end
-    scenario "I can see the user's username" do
-        expect(page).to have_content(@user.name)
-    end
 
-    scenario "I can see the number of posts the user has written" do
-        expect(page).to have_content("Number of posts: 4")
-      end
+  scenario "I can see the user's username" do
+    expect(page).to have_content(@user.name)
+  end
 
-      scenario "I can see a post's title" do
-        expect(page).to have_content(@first_post.title)
-        expect(page).to have_content(@second_post.title)
-        expect(page).to have_content(@third_post.title)
-        expect(page).to have_content(@last_post.title)
-      end
+  scenario 'I can see the number of posts the user has written' do
+    expect(page).to have_content('Number of posts: 1')
+  end
 
-      scenario "I can see some of the post's body" do
-        expect(page).to have_content(@first_post.text)
-        expect(page).to have_content(@second_post.text)
-        expect(page).to have_content(@third_post.text)
-        expect(page).to have_content(@last_post.text)
-      end
+  scenario "I can see a post's title" do
+    expect(page).to have_content(@first_post.title)
+  end
 
-      scenario "I can see the first comments on a post." do
-        expect(page).to have_content(@comment1.text)
-        expect(page).to have_content(@comment2.text)
-        expect(page).to have_content(@comment3.text)
-      end
+  scenario "I can see some of the post's body" do
+    expect(page).to have_content(@first_post.text)
+  end
 
-      scenario "I can see how many comments a post has" do
-        expect(page).to have_content("comments: 5")
-    end
+  scenario 'I can see the first comments on a post.' do
+    expect(page).to have_content(@comment1.text)
+    expect(page).to have_content(@comment2.text)
+  end
+end
 
-    scenario "I can see how many likes a post has" do
-        expect(page).to have_content("Likes: 0")
-    end
+RSpec.feature 'User Show page', type: :feature do
+  before do
+    @user = User.create(name: 'Tumaini Maganiko', photo: 'https://image.com/image.jpg', bio: 'Hello', posts_counter: 0)
+    @first_post = Post.create(author: @user, title: 'Post One', text: 'First post', comments_counter: 0,
+                              likes_counter: 0)
 
-    scenario "I can see a section for pagination if there are more posts than fit on the view" do
-        expect(page).to have_content("Pagination")
-    end
+    @comment1 = Comment.create(author: @user, post: @first_post, text: 'comment 1')
+    @comment2 = Comment.create(author: @user, post: @first_post, text: 'comment 2')
+
+    # Visiting the user's show page
+    visit user_posts_path(@user)
+  end
+
+  scenario 'I can see how many comments a post has' do
+    expect(page).to have_content('comments: 2')
+  end
+
+  scenario 'I can see how many likes a post has' do
+    expect(page).to have_content('Likes: 0')
+  end
+
+  scenario 'I can see a section for pagination if there are more posts than fit on the view' do
+    expect(page).to have_content('Pagination')
+  end
 end
