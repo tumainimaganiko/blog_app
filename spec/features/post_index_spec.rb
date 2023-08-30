@@ -55,4 +55,8 @@ RSpec.feature "User Show page", type: :feature do
         expect(page).to have_content(@comment2.text)
         expect(page).to have_content(@comment3.text)
       end
+
+      scenario "I can see how many comments a post has" do
+        expect(page).to have_content("comments: 5")
+    end
 end
