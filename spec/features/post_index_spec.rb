@@ -35,4 +35,11 @@ RSpec.feature "User Show page", type: :feature do
     scenario "I can see the number of posts the user has written" do
         expect(page).to have_content("Number of posts: 4")
       end
+
+      scenario "I can see a post's title" do
+        expect(page).to have_content(@first_post.title)
+        expect(page).to have_content(@second_post.title)
+        expect(page).to have_content(@third_post.title)
+        expect(page).to have_content(@last_post.title)
+      end
 end
