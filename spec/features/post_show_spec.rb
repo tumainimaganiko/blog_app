@@ -21,3 +21,7 @@ RSpec.feature 'Post show page', type: :feature do
   scenario 'I can see who wrote the post' do
     expect(page).to have_content(@user.name)
   end
+
+  scenario 'I can see how many comments it has' do
+    expect(page).to have_content('comments: 2')
+  end
