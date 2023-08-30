@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User Show page", type: :feature do
-    before(:each) do
+    before do
         # Creating the user
         @user = User.create(
           name: 'Tumaini Maganiko',
