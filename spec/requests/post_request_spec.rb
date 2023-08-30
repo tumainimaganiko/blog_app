@@ -1,45 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts' do
-  describe 'posts/index', type: :view do
-    it 'response body includes correct placeholder text' do
-      render template: 'posts/index'
-
-      expect(rendered).to have_selector('h1', text: 'Here is the index page of your posts for a given user')
-    end
-  end
-  describe 'posts/show', type: :view do
-    it 'response body includes correct placeholder text' do
-      render template: 'posts/show'
-
-      expect(rendered).to have_selector('h1', text: 'Here is a list of posts for a given user')
-    end
-  end
-
+RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    it 'response status was correct' do
-      get '/users/user_id/posts/index'
+    it 'returns a success response' do
+      user = User.create!(name: 'Name', photo: 'https://image.com/image.jpg', posts_counter: 0)
+      get user_posts_path(user_id: user.id)
       expect(response).to have_http_status(:success)
+      expect(response.body).to include('Here is a list of posts for a given user')
+      expect(response).to render_template(:index)
     end
   end
 
-  describe 'GET /index' do
-    it 'response status was correct' do
-      get '/users/user_id/posts/show'
+  describe 'GET /show' do
+    it 'returns a success response' do
+      user = User.create!(name: 'Name', posts_counter: 0)
+      post = Post.create!(title: 'Post Title', author_id: user.id, comments_counter: 0, likes_counter: 0)
+      get user_post_path(user_id: user.id, id: post.id)
       expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'users' do
-    it 'renders the index template' do
-      get '/users/user_id/posts'
-
-      expect(response).to render_template('index')
-    end
-    it 'renders the show template' do
-      get '/users/user_id/posts/posts_id'
-
-      expect(response).to render_template('show')
+      expect(response.body).to include('Here is detail of a post for a specific user')
+      expect(response).to render_template(:show)
     end
   end
 end
