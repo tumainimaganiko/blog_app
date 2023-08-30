@@ -13,4 +13,7 @@ RSpec.feature 'Post show page', type: :feature do
       @comment2 = Comment.create(author: @user, post: @first_post, text: 'comment 2')
       visit user_post_path(@user, @first_post)
   end
-  
+
+  scenario "I can see the post's title" do
+    expect(page).to have_content(@first_post.title)
+  end
