@@ -31,4 +31,8 @@ RSpec.feature "User Show page", type: :feature do
     scenario "I can see the user's username" do
         expect(page).to have_content(@user.name)
     end
+
+    scenario "I can see the number of posts the user has written" do
+        expect(page).to have_content("Number of posts: 4")
+      end
 end
