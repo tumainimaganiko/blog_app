@@ -159,3 +159,19 @@ body {
 .new {
   margin: 10px auto;
 }
+
+.log-header {
+  text-align: center;
+}
+
+.custom-form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
